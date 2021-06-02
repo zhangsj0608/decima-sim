@@ -118,7 +118,7 @@ def train_agent(agent_id, param_queue, reward_queue, adv_queue, gradient_queue):
         range(1, args.exec_cap + 1))
 
     # collect experiences
-    while True:
+    while True:  # training epochs, each is managed by queue functions -- zsj
         # get parameters from master
         (actor_params, seed, max_time, entropy_weight) = \
             param_queue.get()
@@ -158,7 +158,7 @@ def train_agent(agent_id, param_queue, reward_queue, adv_queue, gradient_queue):
             # initial time
             exp['wall_time'].append(env.wall_time.curr_time)
 
-            while not done:
+            while not done:  # This is one epoch. It's done when all jobs are scheduled and interacted with environment
                 
                 node, use_exec = invoke_model(actor_agent, obs, exp)
 
@@ -166,7 +166,7 @@ def train_agent(agent_id, param_queue, reward_queue, adv_queue, gradient_queue):
 
                 if node is not None:
                     # valid action, store reward and time
-                    exp['reward'].append(reward)
+                    exp['reward'].append(reward)  # per step reward = - (elapse time * num of jobs) -- zsj
                     exp['wall_time'].append(env.wall_time.curr_time)
                 elif len(exp['reward']) > 0:
                     # Note: if we skip the reward when node is None
@@ -184,6 +184,7 @@ def train_agent(agent_id, param_queue, reward_queue, adv_queue, gradient_queue):
                 len(env.finished_job_dags),
                 np.mean([j.completion_time - j.start_time \
                          for j in env.finished_job_dags]),
+                np.max([j.completion_time for j in env.finished_job_dags]),   # make span
                 env.wall_time.curr_time >= env.max_time])
 
             # get advantage term from master
@@ -220,10 +221,10 @@ def main():
     create_folder_if_not_exists(args.model_folder)
 
     # initialize communication queues
-    params_queues = [mp.Queue(1) for _ in range(args.num_agents)]
-    reward_queues = [mp.Queue(1) for _ in range(args.num_agents)]
-    adv_queues = [mp.Queue(1) for _ in range(args.num_agents)]
-    gradient_queues = [mp.Queue(1) for _ in range(args.num_agents)]
+    params_queues = [mp.Queue(1) for _ in range(args.num_agents)]  # actor -> agent: the model param and training params
+    reward_queues = [mp.Queue(1) for _ in range(args.num_agents)]  # agent -> actor: the results of schedule, e.g. batch advantage, avg JCT
+    adv_queues = [mp.Queue(1) for _ in range(args.num_agents)]  # actor -> agent: cumulative batch rewards - baseline
+    gradient_queues = [mp.Queue(1) for _ in range(args.num_agents)]  # agent -> actor: gradients, and loss
 
     # set up training agents
     agents = []
@@ -254,7 +255,7 @@ def main():
     tf_logger = TFLogger(sess, [
         'actor_loss', 'entropy', 'value_loss', 'episode_length',
         'average_reward_per_second', 'sum_reward', 'reset_probability',
-        'num_jobs', 'reset_hit', 'average_job_duration',
+        'num_jobs', 'reset_hit', 'average_job_duration', 'average_make_span',
         'entropy_weight'])
 
     # store average reward for computing differential rewards
@@ -266,9 +267,11 @@ def main():
 
     # initialize episode reset probability
     reset_prob = args.reset_prob
+    current_ep = 0 if args.saved_model is None else int(args.saved_model.split('_')[-1])  # -- zsj
 
     # ---- start training process ----
     for ep in range(1, args.num_ep):
+        ep += current_ep  # -- zsj
         print('training epoch', ep)
 
         # synchronize the model parameters for each training agent
@@ -281,12 +284,12 @@ def main():
         for i in range(args.num_agents):
             params_queues[i].put([
                 actor_params, args.seed + ep,
-                max_time, entropy_weight])
+                max_time, entropy_weight])  # the same seed for the same sequence of jobs in different TrainAgent's env.  -- zsj
 
         # storage for advantage computation
         all_rewards, all_diff_times, all_times, \
-        all_num_finished_jobs, all_avg_job_duration, \
-        all_reset_hit, = [], [], [], [], [], []
+        all_num_finished_jobs, all_avg_job_duration, all_make_span, \
+        all_reset_hit, = [], [], [], [], [], [], []
 
         t1 = time.time()
 
@@ -301,21 +304,23 @@ def main():
                 continue
             else:
                 batch_reward, batch_time, \
-                    num_finished_jobs, avg_job_duration, \
+                    num_finished_jobs, avg_job_duration, make_span, \
                     reset_hit = result
 
             diff_time = np.array(batch_time[1:]) - \
                         np.array(batch_time[:-1])
 
-            all_rewards.append(batch_reward)
-            all_diff_times.append(diff_time)
+            all_rewards.append(batch_reward)  # the rewards of all steps in a episode  -- zsj
+            all_diff_times.append(diff_time)  # the differential time for all steps in a episode -- zsj
             all_times.append(batch_time[1:])
             all_num_finished_jobs.append(num_finished_jobs)
             all_avg_job_duration.append(avg_job_duration)
+            all_make_span.append(make_span)
             all_reset_hit.append(reset_hit)
 
-            avg_reward_calculator.add_list_filter_zero(
-                batch_reward, diff_time)
+            # avg_reward_calculator.add_list_filter_zero(
+            #     batch_reward, diff_time)  # avg rewards (comparing to sum rewards) in a episode -- zsj
+            avg_reward_calculator.add_list(batch_reward, diff_time)  # -- here
 
         t2 = time.time()
         print('got reward from workers', t2 - t1, 'seconds')
@@ -330,12 +335,13 @@ def main():
 
         # compute differential reward
         all_cum_reward = []
-        avg_per_step_reward = avg_reward_calculator.get_avg_per_step_reward()
+        avg_per_step_reward = avg_reward_calculator.get_avg_per_step_reward()  # avg per-sec reward for all agents --zsj
+
         for i in range(args.num_agents):
             if args.diff_reward_enabled:
                 # differential reward mode on
                 rewards = np.array([r - avg_per_step_reward * t for \
-                    (r, t) in zip(all_rewards[i], all_diff_times[i])])
+                    (r, t) in zip(all_rewards[i], all_diff_times[i])])  # after change the per-step rewards - average time step rewards * time -- zsj
             else:
                 # regular reward
                 rewards = np.array([r for \
@@ -350,8 +356,8 @@ def main():
 
         # give worker back the advantage
         for i in range(args.num_agents):
-            batch_adv = all_cum_reward[i] - baselines[i]
-            batch_adv = np.reshape(batch_adv, [len(batch_adv), 1])
+            batch_adv = all_cum_reward[i] - baselines[i]  # the rewards after minus the baseline -- zsj
+            batch_adv = np.reshape(batch_adv, [len(batch_adv), 1])  # len == len(time steps in the episode) -- zsj
             adv_queues[i].put(batch_adv)
 
         t3 = time.time()
@@ -366,11 +372,12 @@ def main():
             (actor_gradient, loss) = gradient_queues[i].get()
 
             actor_gradients.append(actor_gradient)
-            all_action_loss.append(loss[0])
+            all_action_loss.append(loss[0])  # action loss -- zsj
             all_entropy.append(-loss[1] / \
-                float(all_cum_reward[i].shape[0]))
-            all_value_loss.append(loss[2])
+                float(all_cum_reward[i].shape[0]))  # - entropy -- zsj
+            all_value_loss.append(loss[2])  # loss -- zsj
 
+        print('avg reward:', avg_per_step_reward * args.reward_scale)
         t4 = time.time()
         print('worker send back gradients', t4 - t3, 'seconds')
 
@@ -391,6 +398,7 @@ def main():
             np.mean(all_num_finished_jobs),
             np.mean(all_reset_hit),
             np.mean(all_avg_job_duration),
+            np.mean(all_make_span),
             entropy_weight])
 
         # decrease entropy weight
@@ -409,4 +417,18 @@ def main():
 
 
 if __name__ == '__main__':
+    # args.learn_obj = 'makespan1'  # -- here
+    # args.average_reward_storage_size = 100000000
+    # args.reward_scale = 100
+    args.exec_cap = 5
+    args.num_init_dags = 20
+    args.num_stream_dags = 0
+    args.reset_prob = 5e-7
+    args.reset_prob_min = 5e-8
+    args.reset_prob_decay = 4e-10
+    args.diff_reward_enabled = 1  # -- here
+    args.num_agents = 2
+    args.model_save_interval = 100
+    args.num_ep = 2
     main()
+

@@ -45,7 +45,7 @@ def compute_actor_gradients(actor_agent, exp, batch_adv, entropy_weight):
         # expand sparse running_dag_mats
         extended_running_dag_mats = merge_and_extend_sp_mat(running_dag_mats)
 
-        # compute gradient
+        # compute gradient -- test zsj
         act_gradients, loss = actor_agent.get_gradients(
             node_inputs, job_inputs,
             node_valid_mask, job_valid_mask,
@@ -55,12 +55,20 @@ def compute_actor_gradients(actor_agent, exp, batch_adv, entropy_weight):
             adv, entropy_weight)
 
         all_gradients.append(act_gradients)
-        all_loss[0].append(loss[0])
-        all_loss[1].append(loss[1])
+        all_loss[0].append(loss[0])  # adv loss
+        all_loss[1].append(loss[1])  # entropy loss
 
-    all_loss[0] = np.sum(all_loss[0])
-    all_loss[1] = np.sum(all_loss[1])  # to get entropy
-    all_loss[2] = np.sum(batch_adv ** 2) # time based baseline loss
+        # for test -- zsj
+        print('adv:', adv)
+        print('actor loss:', loss[0])
+
+    all_act_loss = [np.array(all_loss[0] + entropy_weight * all_loss[1])]
+
+    all_loss[0] = np.sum(all_loss[0])  # advantage loss 和 adv 的符号相同
+    all_loss[1] = np.sum(all_loss[1])  # entropy loss
+    all_loss[2] = np.sum(batch_adv ** 2)  # value loss, time based baseline loss
+    all_loss.append(np.sum(all_act_loss))  # act loss
+
 
     # aggregate all gradients from the batches
     gradients = aggregate_gradients(all_gradients)

@@ -70,14 +70,18 @@ class ActorAgent(Agent):
 
         # draw action based on the probability (from OpenAI baselines)
         # node_acts [batch_size, 1]
-        logits = tf.log(self.node_act_probs)
-        noise = tf.random_uniform(tf.shape(logits))
-        self.node_acts = tf.argmax(logits - tf.log(-tf.log(noise)), 1)
+        logits = tf.log(self.node_act_probs)  # log(softmax), the shape is still [batch_size, num_nodes] -- zsj
+        # noise = tf.random_uniform(tf.shape(logits))
+        # self.node_acts = tf.argmax(logits - tf.log(-tf.log(noise)), 1)  # the shape is [batch_size, 1] -- zsj
+
+        self.node_acts = tf.argmax(logits, 1)  # -- zsj remove noise
 
         # job_acts [batch_size, num_jobs, 1]
         logits = tf.log(self.job_act_probs)
-        noise = tf.random_uniform(tf.shape(logits))
-        self.job_acts = tf.argmax(logits - tf.log(-tf.log(noise)), 2)
+        # noise = tf.random_uniform(tf.shape(logits))
+        # self.job_acts = tf.argmax(logits - tf.log(-tf.log(noise)), 2)
+
+        self.job_acts = tf.argmax(logits, 2)  # -- zsj remove noise
 
         # Selected action for node, 0-1 vector ([batch_size, total_num_nodes])
         self.node_act_vec = tf.placeholder(tf.float32, [None, None])
@@ -85,7 +89,7 @@ class ActorAgent(Agent):
         self.job_act_vec = tf.placeholder(tf.float32, [None, None, None])
 
         # advantage term (from Monte Calro or critic) ([batch_size, 1])
-        self.adv = tf.placeholder(tf.float32, [None, 1])
+        self.adv = tf.placeholder(tf.float32, [None, 1])  # to be fed from the env's interaction, not from model -- zsj
 
         # use entropy to promote exploration, this term decays over time
         self.entropy_weight = tf.placeholder(tf.float32, ())
@@ -93,17 +97,17 @@ class ActorAgent(Agent):
         # select node action probability
         self.selected_node_prob = tf.reduce_sum(tf.multiply(
             self.node_act_probs, self.node_act_vec),
-            reduction_indices=1, keep_dims=True)
+            reduction_indices=1, keep_dims=True)  # shape [batch_size, 1] -- zsj
 
         # select job action probability
         self.selected_job_prob = tf.reduce_sum(tf.reduce_sum(tf.multiply(
             self.job_act_probs, self.job_act_vec),
-            reduction_indices=2), reduction_indices=1, keep_dims=True)
+            reduction_indices=2), reduction_indices=1, keep_dims=True)  # shape [batch_size, 1]  -- zsj
 
         # actor loss due to advantge (negated)
         self.adv_loss = tf.reduce_sum(tf.multiply(
             tf.log(self.selected_node_prob * self.selected_job_prob + \
-            self.eps), -self.adv))
+            self.eps), -self.adv))  # combine both node select prob and job exec select prob, and multiply by the the advantage -- zsj
 
         # node_entropy
         self.node_entropy = tf.reduce_sum(tf.multiply(
@@ -161,6 +165,7 @@ class ActorAgent(Agent):
 
         if args.saved_model is not None:
             self.saver.restore(self.sess, args.saved_model)
+            print('Restore model from {}'.format(args.saved_model))
 
     def actor_network(self, node_inputs, gcn_outputs, job_inputs,
                       gsn_dag_summary, gsn_global_summary,
@@ -169,7 +174,7 @@ class ActorAgent(Agent):
 
         # takes output from graph embedding and raw_input from environment
 
-        batch_size = tf.shape(node_valid_mask)[0]
+        batch_size = tf.shape(node_valid_mask)[0]  # for batch training, batch size > 1; for inference, batch size = 1 -- zsj
 
         # (1) reshape node inputs to batch format
         node_inputs_reshape = tf.reshape(
@@ -219,10 +224,10 @@ class ActorAgent(Agent):
             node_valid_mask = (node_valid_mask - 1) * 10000.0
 
             # apply mask
-            node_outputs = node_outputs + node_valid_mask
+            node_outputs = node_outputs + node_valid_mask  # the shape is [batch_size, total_num_nodes] -- zsj
 
             # do masked softmax over nodes on the graph
-            node_outputs = tf.nn.softmax(node_outputs, dim=-1)
+            node_outputs = tf.nn.softmax(node_outputs, dim=-1)  # the shape of output is still [batch_size, total_num_nodes] -- zsj
 
             # -- part B, the distribution over executor limits --
             merge_job = tf.concat([

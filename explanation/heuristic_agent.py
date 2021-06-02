@@ -11,8 +11,9 @@ class DynamicPartitionAgent(Agent):
     def __init__(self):
         Agent.__init__(self)
 
-    def get_action(self, obs):
+    def get_action(self, obs, **kwargs):
 
+        decision_made_by_algorithm = False
         # parse observation
         job_dags, source_job, num_source_exec, \
         frontier_nodes, executor_limits, \
@@ -59,20 +60,19 @@ class DynamicPartitionAgent(Agent):
             # immediately scheduable nodes
             for node in source_job.frontier_nodes:
                 if node in frontier_nodes:
-                    return node, num_source_exec
+                    return node, num_source_exec, decision_made_by_algorithm
             # schedulable node in the job
             for node in frontier_nodes:
                 if node.job_dag == source_job:
-                    return node, num_source_exec
+                    return node, num_source_exec, decision_made_by_algorithm
 
         # job_dag.frontier_nodes -> node ready to schedule for run  - zsj
         # env.frontier_nodes -> node that can be schedule later (not saturated) - zsj
 
         # the source job is finished or does not exist
+        decision_made_by_algorithm = True
         for job_dag in job_dags:
-            print('call the actual scheduler here')
             if exec_map[job_dag] < exec_cap:
-                print('already existing exec num', exec_map[job_dag])
                 next_node = None
                 # immediately scheduable node first
                 for node in job_dag.frontier_nodes:
@@ -93,7 +93,7 @@ class DynamicPartitionAgent(Agent):
                         moving_executors.count(node),
                         exec_cap - exec_map[job_dag],
                         num_source_exec)
-                    return node, use_exec
+                    return node, use_exec, decision_made_by_algorithm
 
         # there is more executors than tasks in the system
-        return None, num_source_exec
+        return None, num_source_exec, decision_made_by_algorithm

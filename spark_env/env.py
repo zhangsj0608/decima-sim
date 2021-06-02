@@ -52,15 +52,21 @@ class Environment(object):
         self.moving_executors.add_job(job_dag)
         self.free_executors.add_job(job_dag)
         self.exec_commit.add_job(job_dag)
+        self.all_jobs_ever_exist.append(job_dag)
 
     def assign_executor(self, executor, frontier_changed):
+        """
+        有task所在的executor完成时，1. 如果node未完成， 直接分配給下个task 2. a. 如果node完成了(frontier change)，
+        如果有commit，直接分配给对应的node, 否则放入free executor集合 b. 如果node未完成，如果有commit，直接分配，否则将剩余
+        的task待完成的executor 放入 num_source_exec, 等待下一步step模型预测的node。
+        """
         if executor.node is not None and not executor.node.no_more_tasks:
             # keep working on the previous node
             task = executor.node.schedule(executor)
             self.timeline.push(task.finish_time, task)
-        else:
+        else:  # executor 上的node 完成了，或者仍有task运行, 无需分配更多executor了
             # need to move on to other nodes
-            if frontier_changed:
+            if frontier_changed:  #  frontier change， 下一个节点可以schedule了
                 # frontier changed, need to consult all free executors
                 # note: executor.job_dag might change after self.schedule()
                 source_job = executor.job_dag
@@ -72,10 +78,10 @@ class Environment(object):
                     # free up the executor
                     self.free_executors.add(source_job, executor)
                 # then consult all free executors
-                self.exec_to_schedule = OrderedSet(self.free_executors[source_job])
+                self.exec_to_schedule = OrderedSet(self.free_executors[source_job])  # exec_to_schedule来自同一个source
                 self.source_job = source_job
-                self.num_source_exec = len(self.free_executors[source_job])
-            else:
+                self.num_source_exec = len(self.free_executors[source_job])  # num_source_exec即是exec的数量
+            else:  #  # frontier no change， 下一个节点不可以schedule的
                 # just need to schedule one current executor
                 self.exec_to_schedule = {executor}
                 # only care about executors on the node
@@ -170,6 +176,10 @@ class Environment(object):
         return anticipated_task_idx >= node.num_tasks
 
     def schedule(self):
+        """
+        从executor_commit中进行调度，其中，executor_commit由模型决定，每次可调度的exec_to_schedule有同一个source, 即全局
+        的source job
+        """
         executor = next(iter(self.exec_to_schedule))
         source = executor.job_dag if executor.node is None else executor.node
 
@@ -191,12 +201,10 @@ class Environment(object):
                    any([not n.no_more_tasks for n in \
                         executor.job_dag.nodes]):
                     # mark executor as idle in its original job
-                    self.free_executors.add(executor.job_dag, executor)
+                    self.free_executors.add(executor.job_dag, executor)  # 在free executor里 job_dag -> executor
                 else:
                     # no where to assign, put executor in null pool
-                    self.free_executors.add(None, executor)
-
-
+                    self.free_executors.add(None, executor)  # 在free executor里 None -> executor
             elif not node.no_more_tasks:
                 # node is not currently saturated
                 if executor.job_dag == node.job_dag:
@@ -228,6 +236,7 @@ class Environment(object):
         # commit the source executor
         executor = next(iter(self.exec_to_schedule))
         source = executor.job_dag if executor.node is None else executor.node
+        # 所有的exec_to_schedule都来自于一个source job
 
         # compute number of valid executors to assign
         if next_node is not None:
@@ -275,6 +284,9 @@ class Environment(object):
 
                     frontier_changed = node.job_dag.update_frontier_nodes(node)
 
+                # 分配修改num_source_exec，进入下一个step, 根据 1. num_source = 1, free_executor = {完成了node的 executor}
+                # 2. num_source > 1, free_executor = {完成了当前task，此时node剩余task正在运行}， 后续当其他task完成，执行1
+                # source 即 当前完成的executor所执行完的 job。
                 # assign new destination for the job
                 self.assign_executor(finished_task.executor, frontier_changed)
 
@@ -356,7 +368,7 @@ class Environment(object):
         self.finished_job_dags.add(job_dag)
         self.action_map = compute_act_map(self.job_dags)
 
-    def reset(self, max_time=np.inf):
+    def reset(self, max_time=np.inf, pert_func=None):
         self.max_time = max_time
         self.wall_time.reset()
         self.timeline.reset()
@@ -371,9 +383,16 @@ class Environment(object):
         # generate a set of new jobs
         self.job_dags = generate_jobs(
             self.np_random, self.timeline, self.wall_time)
+
+        if pert_func is not None:  # apply perturbations here -- zsj
+            perturbed_job = pert_func(list(self.job_dags))
+            num_tasks_per_node = [node.num_tasks for node in perturbed_job.nodes]
+            print('perturbed job:', perturbed_job, 'num_tasks:', num_tasks_per_node)
+
         # map action to dag_idx and node_idx
         self.action_map = compute_act_map(self.job_dags)
         # add initial set of jobs in the system
+        self.all_jobs_ever_exist = []
         for job_dag in self.job_dags:
             self.add_job(job_dag)
         # put all executors as source executors initially

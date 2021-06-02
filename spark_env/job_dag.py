@@ -5,7 +5,10 @@ from utils import OrderedSet
 from param import *
 from spark_env.node import NodeDuration
 
+
 class JobDAG(object):
+    idx = 0
+
     def __init__(self, nodes, adj_mat, name):
         # nodes: list of N nodes
         # adj_mat: N by N 0-1 adjacency matrix, e_ij = 1 -> edge from i to j
@@ -41,7 +44,7 @@ class JobDAG(object):
         # dag is completed
         self.completed = False
 
-        # dag start ime
+        # dag start time is the submission time
         self.start_time = None
 
         # dag completion time
@@ -50,6 +53,9 @@ class JobDAG(object):
         # map a executor number to an interval
         self.executor_interval_map = \
             self.get_executor_interval_map()
+
+        self.idx = JobDAG.idx
+        JobDAG.idx += 1
 
     def assign_job_dag_to_node(self):
         for node in self.nodes:
@@ -117,6 +123,9 @@ class JobDAG(object):
                     self.frontier_nodes.add(child)
                     frontier_nodes_changed = True
         return frontier_nodes_changed
+
+    def __repr__(self):
+        return 'Job-{}-{}'.format(self.idx, self.name)
 
 
 def merge_job_dags(job_dags):

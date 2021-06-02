@@ -76,6 +76,12 @@ parser.add_argument('--tpch_size', type=str,
 parser.add_argument('--tpch_num', type=int, default=22,
                     help='Numer of TPCH queries (default: 22)')
 
+# -- ALIBABA --
+parser.add_argument('--alibaba_path', type=str, default='./spark_env/alibaba/batch_instance_3.csv',
+                    help='Path of alibaba dataset')
+parser.add_argument('--tpch_jobs_percentage', type=float, default=1.0,
+                    help='The percentage of tpch jobs in the mixed job collections')
+
 # -- Visualization --
 parser.add_argument('--canvs_visualization', type=int, default=1,
                     help='Enable canvs visualization (default: 1)')
@@ -129,7 +135,7 @@ parser.add_argument('--num_agents', type=int, default=16,
                     help='Number of parallel agents (default: 16)')
 parser.add_argument('--num_ep', type=int, default=10000000,
                     help='Number of training epochs (default: 10000000)')
-parser.add_argument('--learn_obj', type=str, default='mean',
+parser.add_argument('--learn_obj', type=str, default='makespan_new',
                     help='Learning objective (default: mean)')
 parser.add_argument('--saved_model', type=str, default=None,
                     help='Path to the saved tf model (default: None)')

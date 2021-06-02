@@ -1,0 +1,805 @@
+True: Job-25-fixed_tpch-2g-8
+     run_time_cp_1  ...                  job_id_2
+0           793.05  ...   Job-1-fixed_tpch-100g-3
+1           793.05  ...   Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-3-fixed_tpch-10g-9
+3           793.05  ...    Job-4-fixed_tpch-5g-21
+4           793.05  ...    Job-5-fixed_tpch-2g-20
+..             ...  ...                       ...
+865         349.31  ...   Job-24-fixed_tpch-80g-8
+866         349.31  ...    Job-25-fixed_tpch-2g-8
+867         349.31  ...   Job-26-fixed_tpch-2g-13
+868         349.31  ...   Job-27-fixed_tpch-10g-5
+869         349.31  ...  Job-28-fixed_tpch-50g-22
+
+[870 rows x 14 columns]
+True: Job-25-fixed_tpch-2g-8
+     run_time_cp_1  ...                  job_id_2
+0           793.05  ...   Job-1-fixed_tpch-100g-3
+1           793.05  ...   Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-3-fixed_tpch-10g-9
+3           793.05  ...    Job-4-fixed_tpch-5g-21
+4           793.05  ...    Job-5-fixed_tpch-2g-20
+..             ...  ...                       ...
+865         349.31  ...   Job-24-fixed_tpch-80g-8
+866         349.31  ...    Job-25-fixed_tpch-2g-8
+867         349.31  ...   Job-26-fixed_tpch-2g-13
+868         349.31  ...   Job-27-fixed_tpch-10g-5
+869         349.31  ...  Job-28-fixed_tpch-50g-22
+
+[870 rows x 14 columns]
+True: Job-12-fixed_tpch-10g-8
+     run_time_cp_1  ...                  job_id_2
+0           793.05  ...   Job-1-fixed_tpch-100g-3
+1           793.05  ...   Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-3-fixed_tpch-10g-9
+3           793.05  ...    Job-4-fixed_tpch-5g-21
+4           793.05  ...    Job-5-fixed_tpch-2g-20
+..             ...  ...                       ...
+865         349.31  ...   Job-24-fixed_tpch-80g-8
+866         349.31  ...    Job-25-fixed_tpch-2g-8
+867         349.31  ...   Job-26-fixed_tpch-2g-13
+868         349.31  ...   Job-27-fixed_tpch-10g-5
+869         349.31  ...  Job-28-fixed_tpch-50g-22
+
+[870 rows x 14 columns]
+True: Job-25-fixed_tpch-2g-8
+     run_time_cp_1  ...                  job_id_2
+0           793.05  ...   Job-1-fixed_tpch-100g-3
+1           793.05  ...   Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-3-fixed_tpch-10g-9
+3           793.05  ...    Job-4-fixed_tpch-5g-21
+4           793.05  ...    Job-5-fixed_tpch-2g-20
+..             ...  ...                       ...
+865         349.31  ...   Job-24-fixed_tpch-80g-8
+866         349.31  ...    Job-25-fixed_tpch-2g-8
+867         349.31  ...   Job-26-fixed_tpch-2g-13
+868         349.31  ...   Job-27-fixed_tpch-10g-5
+869         349.31  ...  Job-28-fixed_tpch-50g-22
+
+[870 rows x 14 columns]
+True: Job-12-fixed_tpch-10g-8
+     run_time_cp_1  ...                  job_id_2
+0           793.05  ...   Job-1-fixed_tpch-100g-3
+1           793.05  ...   Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-3-fixed_tpch-10g-9
+3           793.05  ...    Job-4-fixed_tpch-5g-21
+4           793.05  ...    Job-5-fixed_tpch-2g-20
+..             ...  ...                       ...
+865         349.31  ...   Job-24-fixed_tpch-80g-8
+866         349.31  ...    Job-25-fixed_tpch-2g-8
+867         349.31  ...   Job-26-fixed_tpch-2g-13
+868         349.31  ...   Job-27-fixed_tpch-10g-5
+869         349.31  ...  Job-28-fixed_tpch-50g-22
+
+[870 rows x 14 columns]
+True: Job-5-fixed_tpch-2g-20
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...     Job-3-fixed_tpch-10g-9
+3           793.05  ...     Job-4-fixed_tpch-5g-21
+4           793.05  ...     Job-5-fixed_tpch-2g-20
+..             ...  ...                        ...
+807         349.31  ...  Job-23-fixed_tpch-100g-14
+808         349.31  ...    Job-24-fixed_tpch-80g-8
+809         349.31  ...    Job-26-fixed_tpch-2g-13
+810         349.31  ...    Job-27-fixed_tpch-10g-5
+811         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[812 rows x 14 columns]
+True: Job-27-fixed_tpch-10g-5
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...     Job-3-fixed_tpch-10g-9
+3           793.05  ...     Job-4-fixed_tpch-5g-21
+4           793.05  ...     Job-5-fixed_tpch-2g-20
+..             ...  ...                        ...
+807         349.31  ...  Job-23-fixed_tpch-100g-14
+808         349.31  ...    Job-24-fixed_tpch-80g-8
+809         349.31  ...    Job-26-fixed_tpch-2g-13
+810         349.31  ...    Job-27-fixed_tpch-10g-5
+811         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[812 rows x 14 columns]
+True: Job-3-fixed_tpch-10g-9
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...     Job-3-fixed_tpch-10g-9
+3           793.05  ...     Job-4-fixed_tpch-5g-21
+4           793.05  ...    Job-6-fixed_tpch-100g-6
+..             ...  ...                        ...
+697         349.31  ...  Job-23-fixed_tpch-100g-14
+698         349.31  ...    Job-24-fixed_tpch-80g-8
+699         349.31  ...    Job-26-fixed_tpch-2g-13
+700         349.31  ...    Job-27-fixed_tpch-10g-5
+701         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[702 rows x 14 columns]
+True: Job-15-fixed_tpch-10g-20
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...     Job-3-fixed_tpch-10g-9
+3           793.05  ...     Job-4-fixed_tpch-5g-21
+4           793.05  ...    Job-6-fixed_tpch-100g-6
+..             ...  ...                        ...
+697         349.31  ...  Job-23-fixed_tpch-100g-14
+698         349.31  ...    Job-24-fixed_tpch-80g-8
+699         349.31  ...    Job-26-fixed_tpch-2g-13
+700         349.31  ...    Job-27-fixed_tpch-10g-5
+701         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[702 rows x 14 columns]
+True: Job-13-fixed_tpch-2g-22
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...     Job-3-fixed_tpch-10g-9
+3           793.05  ...    Job-6-fixed_tpch-100g-6
+4           793.05  ...    Job-7-fixed_tpch-10g-13
+..             ...  ...                        ...
+645         349.31  ...  Job-23-fixed_tpch-100g-14
+646         349.31  ...    Job-24-fixed_tpch-80g-8
+647         349.31  ...    Job-26-fixed_tpch-2g-13
+648         349.31  ...    Job-27-fixed_tpch-10g-5
+649         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[650 rows x 14 columns]
+True: Job-9-fixed_tpch-10g-21
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...     Job-3-fixed_tpch-10g-9
+3           793.05  ...    Job-6-fixed_tpch-100g-6
+4           793.05  ...    Job-7-fixed_tpch-10g-13
+..             ...  ...                        ...
+595         349.31  ...  Job-23-fixed_tpch-100g-14
+596         349.31  ...    Job-24-fixed_tpch-80g-8
+597         349.31  ...    Job-26-fixed_tpch-2g-13
+598         349.31  ...    Job-27-fixed_tpch-10g-5
+599         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[600 rows x 14 columns]
+True: Job-18-fixed_tpch-10g-21
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...     Job-3-fixed_tpch-10g-9
+3           793.05  ...    Job-6-fixed_tpch-100g-6
+4           793.05  ...    Job-7-fixed_tpch-10g-13
+..             ...  ...                        ...
+595         349.31  ...  Job-23-fixed_tpch-100g-14
+596         349.31  ...    Job-24-fixed_tpch-80g-8
+597         349.31  ...    Job-26-fixed_tpch-2g-13
+598         349.31  ...    Job-27-fixed_tpch-10g-5
+599         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[600 rows x 14 columns]
+True: Job-24-fixed_tpch-80g-8
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...     Job-3-fixed_tpch-10g-9
+3           793.05  ...    Job-6-fixed_tpch-100g-6
+4           793.05  ...    Job-7-fixed_tpch-10g-13
+..             ...  ...                        ...
+501         349.31  ...   Job-22-fixed_tpch-50g-20
+502         349.31  ...  Job-23-fixed_tpch-100g-14
+503         349.31  ...    Job-24-fixed_tpch-80g-8
+504         349.31  ...    Job-26-fixed_tpch-2g-13
+505         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[506 rows x 14 columns]
+True: Job-26-fixed_tpch-2g-13
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...    Job-7-fixed_tpch-10g-13
+4           793.05  ...      Job-8-fixed_tpch-2g-4
+..             ...  ...                        ...
+457         349.31  ...   Job-22-fixed_tpch-50g-20
+458         349.31  ...  Job-23-fixed_tpch-100g-14
+459         349.31  ...    Job-24-fixed_tpch-80g-8
+460         349.31  ...    Job-26-fixed_tpch-2g-13
+461         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[462 rows x 14 columns]
+True: Job-7-fixed_tpch-10g-13
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...    Job-7-fixed_tpch-10g-13
+4           793.05  ...      Job-8-fixed_tpch-2g-4
+..             ...  ...                        ...
+415         349.31  ...   Job-21-fixed_tpch-100g-7
+416         349.31  ...   Job-22-fixed_tpch-50g-20
+417         349.31  ...  Job-23-fixed_tpch-100g-14
+418         349.31  ...    Job-24-fixed_tpch-80g-8
+419         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[420 rows x 14 columns]
+True: Job-28-fixed_tpch-50g-22
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...    Job-7-fixed_tpch-10g-13
+4           793.05  ...      Job-8-fixed_tpch-2g-4
+..             ...  ...                        ...
+415         349.31  ...   Job-21-fixed_tpch-100g-7
+416         349.31  ...   Job-22-fixed_tpch-50g-20
+417         349.31  ...  Job-23-fixed_tpch-100g-14
+418         349.31  ...    Job-24-fixed_tpch-80g-8
+419         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[420 rows x 14 columns]
+True: Job-29-fixed_tpch-50g-22
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...    Job-7-fixed_tpch-10g-13
+4           793.05  ...      Job-8-fixed_tpch-2g-4
+..             ...  ...                        ...
+375         349.31  ...   Job-21-fixed_tpch-100g-7
+376         349.31  ...   Job-22-fixed_tpch-50g-20
+377         349.31  ...  Job-23-fixed_tpch-100g-14
+378         349.31  ...    Job-24-fixed_tpch-80g-8
+379         349.31  ...   Job-28-fixed_tpch-50g-22
+
+[380 rows x 14 columns]
+True: Job-22-fixed_tpch-50g-20
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...      Job-8-fixed_tpch-2g-4
+4           793.05  ...    Job-9-fixed_tpch-10g-21
+..             ...  ...                        ...
+337         345.69  ...   Job-21-fixed_tpch-100g-7
+338         345.69  ...   Job-22-fixed_tpch-50g-20
+339         345.69  ...  Job-23-fixed_tpch-100g-14
+340         345.69  ...    Job-24-fixed_tpch-80g-8
+341         345.69  ...   Job-28-fixed_tpch-50g-22
+
+[342 rows x 14 columns]
+True: Job-17-fixed_tpch-100g-22
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...    Job-9-fixed_tpch-10g-21
+4           793.05  ...   Job-10-fixed_tpch-10g-12
+..             ...  ...                        ...
+301         114.15  ...   Job-21-fixed_tpch-100g-7
+302         114.15  ...   Job-22-fixed_tpch-50g-20
+303         114.15  ...  Job-23-fixed_tpch-100g-14
+304         114.15  ...    Job-24-fixed_tpch-80g-8
+305         114.15  ...   Job-28-fixed_tpch-50g-22
+
+[306 rows x 14 columns]
+True: Job-11-fixed_tpch-2g-19
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...    Job-9-fixed_tpch-10g-21
+4           793.05  ...   Job-10-fixed_tpch-10g-12
+..             ...  ...                        ...
+267          11.03  ...   Job-20-fixed_tpch-10g-19
+268          11.03  ...   Job-21-fixed_tpch-100g-7
+269          11.03  ...   Job-22-fixed_tpch-50g-20
+270          11.03  ...  Job-23-fixed_tpch-100g-14
+271          11.03  ...    Job-24-fixed_tpch-80g-8
+
+[272 rows x 14 columns]
+True: Job-9-fixed_tpch-10g-21
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...    Job-9-fixed_tpch-10g-21
+4           793.05  ...   Job-10-fixed_tpch-10g-12
+..             ...  ...                        ...
+235        1590.46  ...   Job-19-fixed_tpch-50g-14
+236        1590.46  ...   Job-20-fixed_tpch-10g-19
+237        1590.46  ...   Job-21-fixed_tpch-100g-7
+238        1590.46  ...   Job-22-fixed_tpch-50g-20
+239        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[240 rows x 14 columns]
+True: Job-10-fixed_tpch-10g-12
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...    Job-9-fixed_tpch-10g-21
+4           793.05  ...   Job-10-fixed_tpch-10g-12
+..             ...  ...                        ...
+205        1590.46  ...   Job-19-fixed_tpch-50g-14
+206        1590.46  ...   Job-20-fixed_tpch-10g-19
+207        1590.46  ...   Job-21-fixed_tpch-100g-7
+208        1590.46  ...   Job-22-fixed_tpch-50g-20
+209        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[210 rows x 14 columns]
+True: Job-17-fixed_tpch-100g-22
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...    Job-9-fixed_tpch-10g-21
+4           793.05  ...   Job-10-fixed_tpch-10g-12
+..             ...  ...                        ...
+205        1590.46  ...   Job-19-fixed_tpch-50g-14
+206        1590.46  ...   Job-20-fixed_tpch-10g-19
+207        1590.46  ...   Job-21-fixed_tpch-100g-7
+208        1590.46  ...   Job-22-fixed_tpch-50g-20
+209        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[210 rows x 14 columns]
+True: Job-10-fixed_tpch-10g-12
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...   Job-10-fixed_tpch-10g-12
+4           793.05  ...   Job-14-fixed_tpch-10g-15
+..             ...  ...                        ...
+177        1590.46  ...   Job-19-fixed_tpch-50g-14
+178        1590.46  ...   Job-20-fixed_tpch-10g-19
+179        1590.46  ...   Job-21-fixed_tpch-100g-7
+180        1590.46  ...   Job-22-fixed_tpch-50g-20
+181        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[182 rows x 14 columns]
+True: Job-0-fixed_tpch-50g-10
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...   Job-10-fixed_tpch-10g-12
+4           793.05  ...   Job-14-fixed_tpch-10g-15
+..             ...  ...                        ...
+177        1590.46  ...   Job-19-fixed_tpch-50g-14
+178        1590.46  ...   Job-20-fixed_tpch-10g-19
+179        1590.46  ...   Job-21-fixed_tpch-100g-7
+180        1590.46  ...   Job-22-fixed_tpch-50g-20
+181        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[182 rows x 14 columns]
+True: Job-20-fixed_tpch-10g-19
+     run_time_cp_1  ...                   job_id_2
+0           793.05  ...    Job-1-fixed_tpch-100g-3
+1           793.05  ...    Job-2-fixed_tpch-50g-14
+2           793.05  ...    Job-6-fixed_tpch-100g-6
+3           793.05  ...   Job-14-fixed_tpch-10g-15
+4           793.05  ...    Job-16-fixed_tpch-80g-4
+..             ...  ...                        ...
+151        1590.46  ...   Job-19-fixed_tpch-50g-14
+152        1590.46  ...   Job-20-fixed_tpch-10g-19
+153        1590.46  ...   Job-21-fixed_tpch-100g-7
+154        1590.46  ...   Job-22-fixed_tpch-50g-20
+155        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[156 rows x 14 columns]
+True: Job-14-fixed_tpch-10g-15
+     run_time_cp_1  ...                   job_id_2
+0           661.72  ...    Job-1-fixed_tpch-100g-3
+1           661.72  ...    Job-2-fixed_tpch-50g-14
+2           661.72  ...    Job-6-fixed_tpch-100g-6
+3           661.72  ...   Job-14-fixed_tpch-10g-15
+4           661.72  ...    Job-16-fixed_tpch-80g-4
+..             ...  ...                        ...
+127        1590.46  ...   Job-19-fixed_tpch-50g-14
+128        1590.46  ...   Job-20-fixed_tpch-10g-19
+129        1590.46  ...   Job-21-fixed_tpch-100g-7
+130        1590.46  ...   Job-22-fixed_tpch-50g-20
+131        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[132 rows x 14 columns]
+True: Job-14-fixed_tpch-10g-15
+     run_time_cp_1  ...                   job_id_2
+0           657.19  ...    Job-1-fixed_tpch-100g-3
+1           657.19  ...    Job-2-fixed_tpch-50g-14
+2           657.19  ...    Job-6-fixed_tpch-100g-6
+3           657.19  ...   Job-14-fixed_tpch-10g-15
+4           657.19  ...    Job-16-fixed_tpch-80g-4
+..             ...  ...                        ...
+105        1590.46  ...    Job-16-fixed_tpch-80g-4
+106        1590.46  ...   Job-19-fixed_tpch-50g-14
+107        1590.46  ...   Job-21-fixed_tpch-100g-7
+108        1590.46  ...   Job-22-fixed_tpch-50g-20
+109        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[110 rows x 14 columns]
+True: Job-21-fixed_tpch-100g-7
+     run_time_cp_1  ...                   job_id_2
+0           510.01  ...    Job-1-fixed_tpch-100g-3
+1           510.01  ...    Job-2-fixed_tpch-50g-14
+2           510.01  ...    Job-6-fixed_tpch-100g-6
+3           510.01  ...   Job-14-fixed_tpch-10g-15
+4           510.01  ...    Job-16-fixed_tpch-80g-4
+..             ...  ...                        ...
+105        1590.46  ...    Job-16-fixed_tpch-80g-4
+106        1590.46  ...   Job-19-fixed_tpch-50g-14
+107        1590.46  ...   Job-21-fixed_tpch-100g-7
+108        1590.46  ...   Job-22-fixed_tpch-50g-20
+109        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[110 rows x 14 columns]
+True: Job-2-fixed_tpch-50g-14
+    run_time_cp_1  ...                   job_id_2
+0            0.19  ...    Job-1-fixed_tpch-100g-3
+1            0.19  ...    Job-2-fixed_tpch-50g-14
+2            0.19  ...    Job-6-fixed_tpch-100g-6
+3            0.19  ...    Job-16-fixed_tpch-80g-4
+4            0.19  ...   Job-19-fixed_tpch-50g-14
+..            ...  ...                        ...
+85        1590.46  ...    Job-16-fixed_tpch-80g-4
+86        1590.46  ...   Job-19-fixed_tpch-50g-14
+87        1590.46  ...   Job-21-fixed_tpch-100g-7
+88        1590.46  ...   Job-22-fixed_tpch-50g-20
+89        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[90 rows x 14 columns]
+True: Job-19-fixed_tpch-50g-14
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-2-fixed_tpch-50g-14
+1         1730.36  ...    Job-6-fixed_tpch-100g-6
+2         1730.36  ...    Job-16-fixed_tpch-80g-4
+3         1730.36  ...   Job-19-fixed_tpch-50g-14
+4         1730.36  ...   Job-21-fixed_tpch-100g-7
+..            ...  ...                        ...
+67        1590.46  ...    Job-16-fixed_tpch-80g-4
+68        1590.46  ...   Job-19-fixed_tpch-50g-14
+69        1590.46  ...   Job-21-fixed_tpch-100g-7
+70        1590.46  ...   Job-22-fixed_tpch-50g-20
+71        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[72 rows x 14 columns]
+True: Job-2-fixed_tpch-50g-14
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-2-fixed_tpch-50g-14
+1         1730.36  ...    Job-6-fixed_tpch-100g-6
+2         1730.36  ...    Job-16-fixed_tpch-80g-4
+3         1730.36  ...   Job-19-fixed_tpch-50g-14
+4         1730.36  ...   Job-21-fixed_tpch-100g-7
+..            ...  ...                        ...
+67        1590.46  ...    Job-16-fixed_tpch-80g-4
+68        1590.46  ...   Job-19-fixed_tpch-50g-14
+69        1590.46  ...   Job-21-fixed_tpch-100g-7
+70        1590.46  ...   Job-22-fixed_tpch-50g-20
+71        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[72 rows x 14 columns]
+True: Job-19-fixed_tpch-50g-14
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-2-fixed_tpch-50g-14
+1         1730.36  ...    Job-6-fixed_tpch-100g-6
+2         1730.36  ...    Job-16-fixed_tpch-80g-4
+3         1730.36  ...   Job-19-fixed_tpch-50g-14
+4         1730.36  ...   Job-21-fixed_tpch-100g-7
+..            ...  ...                        ...
+67        1590.46  ...    Job-16-fixed_tpch-80g-4
+68        1590.46  ...   Job-19-fixed_tpch-50g-14
+69        1590.46  ...   Job-21-fixed_tpch-100g-7
+70        1590.46  ...   Job-22-fixed_tpch-50g-20
+71        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[72 rows x 14 columns]
+True: Job-19-fixed_tpch-50g-14
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-2-fixed_tpch-50g-14
+1         1730.36  ...    Job-6-fixed_tpch-100g-6
+2         1730.36  ...    Job-16-fixed_tpch-80g-4
+3         1730.36  ...   Job-19-fixed_tpch-50g-14
+4         1730.36  ...   Job-21-fixed_tpch-100g-7
+5         1730.36  ...  Job-23-fixed_tpch-100g-14
+6         1730.36  ...    Job-24-fixed_tpch-80g-8
+7            0.20  ...    Job-1-fixed_tpch-100g-3
+8            0.20  ...    Job-6-fixed_tpch-100g-6
+9            0.20  ...    Job-16-fixed_tpch-80g-4
+10           0.20  ...   Job-19-fixed_tpch-50g-14
+11           0.20  ...   Job-21-fixed_tpch-100g-7
+12           0.20  ...  Job-23-fixed_tpch-100g-14
+13           0.20  ...    Job-24-fixed_tpch-80g-8
+14        1359.28  ...    Job-1-fixed_tpch-100g-3
+15        1359.28  ...    Job-2-fixed_tpch-50g-14
+16        1359.28  ...    Job-16-fixed_tpch-80g-4
+17        1359.28  ...   Job-19-fixed_tpch-50g-14
+18        1359.28  ...   Job-21-fixed_tpch-100g-7
+19        1359.28  ...  Job-23-fixed_tpch-100g-14
+20        1359.28  ...    Job-24-fixed_tpch-80g-8
+21        1385.17  ...    Job-1-fixed_tpch-100g-3
+22        1385.17  ...    Job-2-fixed_tpch-50g-14
+23        1385.17  ...    Job-6-fixed_tpch-100g-6
+24        1385.17  ...   Job-19-fixed_tpch-50g-14
+25        1385.17  ...   Job-21-fixed_tpch-100g-7
+26        1385.17  ...  Job-23-fixed_tpch-100g-14
+27        1385.17  ...    Job-24-fixed_tpch-80g-8
+28         270.76  ...    Job-1-fixed_tpch-100g-3
+29         270.76  ...    Job-2-fixed_tpch-50g-14
+30         270.76  ...    Job-6-fixed_tpch-100g-6
+31         270.76  ...    Job-16-fixed_tpch-80g-4
+32         270.76  ...   Job-21-fixed_tpch-100g-7
+33         270.76  ...  Job-23-fixed_tpch-100g-14
+34         270.76  ...    Job-24-fixed_tpch-80g-8
+35        1793.66  ...    Job-1-fixed_tpch-100g-3
+36        1793.66  ...    Job-2-fixed_tpch-50g-14
+37        1793.66  ...    Job-6-fixed_tpch-100g-6
+38        1793.66  ...    Job-16-fixed_tpch-80g-4
+39        1793.66  ...   Job-19-fixed_tpch-50g-14
+40        1793.66  ...  Job-23-fixed_tpch-100g-14
+41        1793.66  ...    Job-24-fixed_tpch-80g-8
+42        1431.57  ...    Job-1-fixed_tpch-100g-3
+43        1431.57  ...    Job-2-fixed_tpch-50g-14
+44        1431.57  ...    Job-6-fixed_tpch-100g-6
+45        1431.57  ...    Job-16-fixed_tpch-80g-4
+46        1431.57  ...   Job-19-fixed_tpch-50g-14
+47        1431.57  ...   Job-21-fixed_tpch-100g-7
+48        1431.57  ...    Job-24-fixed_tpch-80g-8
+49        1590.46  ...    Job-1-fixed_tpch-100g-3
+50        1590.46  ...    Job-2-fixed_tpch-50g-14
+51        1590.46  ...    Job-6-fixed_tpch-100g-6
+52        1590.46  ...    Job-16-fixed_tpch-80g-4
+53        1590.46  ...   Job-19-fixed_tpch-50g-14
+54        1590.46  ...   Job-21-fixed_tpch-100g-7
+55        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[56 rows x 14 columns]
+True: Job-16-fixed_tpch-80g-4
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-6-fixed_tpch-100g-6
+1         1730.36  ...    Job-16-fixed_tpch-80g-4
+2         1730.36  ...   Job-19-fixed_tpch-50g-14
+3         1730.36  ...   Job-21-fixed_tpch-100g-7
+4         1730.36  ...  Job-23-fixed_tpch-100g-14
+5         1730.36  ...    Job-24-fixed_tpch-80g-8
+6         1359.28  ...    Job-1-fixed_tpch-100g-3
+7         1359.28  ...    Job-16-fixed_tpch-80g-4
+8         1359.28  ...   Job-19-fixed_tpch-50g-14
+9         1359.28  ...   Job-21-fixed_tpch-100g-7
+10        1359.28  ...  Job-23-fixed_tpch-100g-14
+11        1359.28  ...    Job-24-fixed_tpch-80g-8
+12        1385.17  ...    Job-1-fixed_tpch-100g-3
+13        1385.17  ...    Job-6-fixed_tpch-100g-6
+14        1385.17  ...   Job-19-fixed_tpch-50g-14
+15        1385.17  ...   Job-21-fixed_tpch-100g-7
+16        1385.17  ...  Job-23-fixed_tpch-100g-14
+17        1385.17  ...    Job-24-fixed_tpch-80g-8
+18         268.32  ...    Job-1-fixed_tpch-100g-3
+19         268.32  ...    Job-6-fixed_tpch-100g-6
+20         268.32  ...    Job-16-fixed_tpch-80g-4
+21         268.32  ...   Job-21-fixed_tpch-100g-7
+22         268.32  ...  Job-23-fixed_tpch-100g-14
+23         268.32  ...    Job-24-fixed_tpch-80g-8
+24        1793.66  ...    Job-1-fixed_tpch-100g-3
+25        1793.66  ...    Job-6-fixed_tpch-100g-6
+26        1793.66  ...    Job-16-fixed_tpch-80g-4
+27        1793.66  ...   Job-19-fixed_tpch-50g-14
+28        1793.66  ...  Job-23-fixed_tpch-100g-14
+29        1793.66  ...    Job-24-fixed_tpch-80g-8
+30        1431.57  ...    Job-1-fixed_tpch-100g-3
+31        1431.57  ...    Job-6-fixed_tpch-100g-6
+32        1431.57  ...    Job-16-fixed_tpch-80g-4
+33        1431.57  ...   Job-19-fixed_tpch-50g-14
+34        1431.57  ...   Job-21-fixed_tpch-100g-7
+35        1431.57  ...    Job-24-fixed_tpch-80g-8
+36        1590.46  ...    Job-1-fixed_tpch-100g-3
+37        1590.46  ...    Job-6-fixed_tpch-100g-6
+38        1590.46  ...    Job-16-fixed_tpch-80g-4
+39        1590.46  ...   Job-19-fixed_tpch-50g-14
+40        1590.46  ...   Job-21-fixed_tpch-100g-7
+41        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[42 rows x 14 columns]
+True: Job-16-fixed_tpch-80g-4
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-6-fixed_tpch-100g-6
+1         1730.36  ...    Job-16-fixed_tpch-80g-4
+2         1730.36  ...   Job-19-fixed_tpch-50g-14
+3         1730.36  ...   Job-21-fixed_tpch-100g-7
+4         1730.36  ...  Job-23-fixed_tpch-100g-14
+5         1730.36  ...    Job-24-fixed_tpch-80g-8
+6         1359.28  ...    Job-1-fixed_tpch-100g-3
+7         1359.28  ...    Job-16-fixed_tpch-80g-4
+8         1359.28  ...   Job-19-fixed_tpch-50g-14
+9         1359.28  ...   Job-21-fixed_tpch-100g-7
+10        1359.28  ...  Job-23-fixed_tpch-100g-14
+11        1359.28  ...    Job-24-fixed_tpch-80g-8
+12        1385.17  ...    Job-1-fixed_tpch-100g-3
+13        1385.17  ...    Job-6-fixed_tpch-100g-6
+14        1385.17  ...   Job-19-fixed_tpch-50g-14
+15        1385.17  ...   Job-21-fixed_tpch-100g-7
+16        1385.17  ...  Job-23-fixed_tpch-100g-14
+17        1385.17  ...    Job-24-fixed_tpch-80g-8
+18           0.20  ...    Job-1-fixed_tpch-100g-3
+19           0.20  ...    Job-6-fixed_tpch-100g-6
+20           0.20  ...    Job-16-fixed_tpch-80g-4
+21           0.20  ...   Job-21-fixed_tpch-100g-7
+22           0.20  ...  Job-23-fixed_tpch-100g-14
+23           0.20  ...    Job-24-fixed_tpch-80g-8
+24        1793.66  ...    Job-1-fixed_tpch-100g-3
+25        1793.66  ...    Job-6-fixed_tpch-100g-6
+26        1793.66  ...    Job-16-fixed_tpch-80g-4
+27        1793.66  ...   Job-19-fixed_tpch-50g-14
+28        1793.66  ...  Job-23-fixed_tpch-100g-14
+29        1793.66  ...    Job-24-fixed_tpch-80g-8
+30        1431.57  ...    Job-1-fixed_tpch-100g-3
+31        1431.57  ...    Job-6-fixed_tpch-100g-6
+32        1431.57  ...    Job-16-fixed_tpch-80g-4
+33        1431.57  ...   Job-19-fixed_tpch-50g-14
+34        1431.57  ...   Job-21-fixed_tpch-100g-7
+35        1431.57  ...    Job-24-fixed_tpch-80g-8
+36        1590.46  ...    Job-1-fixed_tpch-100g-3
+37        1590.46  ...    Job-6-fixed_tpch-100g-6
+38        1590.46  ...    Job-16-fixed_tpch-80g-4
+39        1590.46  ...   Job-19-fixed_tpch-50g-14
+40        1590.46  ...   Job-21-fixed_tpch-100g-7
+41        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[42 rows x 14 columns]
+True: Job-23-fixed_tpch-100g-14
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-6-fixed_tpch-100g-6
+1         1730.36  ...    Job-16-fixed_tpch-80g-4
+2         1730.36  ...   Job-21-fixed_tpch-100g-7
+3         1730.36  ...  Job-23-fixed_tpch-100g-14
+4         1730.36  ...    Job-24-fixed_tpch-80g-8
+5         1359.28  ...    Job-1-fixed_tpch-100g-3
+6         1359.28  ...    Job-16-fixed_tpch-80g-4
+7         1359.28  ...   Job-21-fixed_tpch-100g-7
+8         1359.28  ...  Job-23-fixed_tpch-100g-14
+9         1359.28  ...    Job-24-fixed_tpch-80g-8
+10        1385.17  ...    Job-1-fixed_tpch-100g-3
+11        1385.17  ...    Job-6-fixed_tpch-100g-6
+12        1385.17  ...   Job-21-fixed_tpch-100g-7
+13        1385.17  ...  Job-23-fixed_tpch-100g-14
+14        1385.17  ...    Job-24-fixed_tpch-80g-8
+15        1793.66  ...    Job-1-fixed_tpch-100g-3
+16        1793.66  ...    Job-6-fixed_tpch-100g-6
+17        1793.66  ...    Job-16-fixed_tpch-80g-4
+18        1793.66  ...  Job-23-fixed_tpch-100g-14
+19        1793.66  ...    Job-24-fixed_tpch-80g-8
+20        1431.57  ...    Job-1-fixed_tpch-100g-3
+21        1431.57  ...    Job-6-fixed_tpch-100g-6
+22        1431.57  ...    Job-16-fixed_tpch-80g-4
+23        1431.57  ...   Job-21-fixed_tpch-100g-7
+24        1431.57  ...    Job-24-fixed_tpch-80g-8
+25        1590.46  ...    Job-1-fixed_tpch-100g-3
+26        1590.46  ...    Job-6-fixed_tpch-100g-6
+27        1590.46  ...    Job-16-fixed_tpch-80g-4
+28        1590.46  ...   Job-21-fixed_tpch-100g-7
+29        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[30 rows x 14 columns]
+True: Job-24-fixed_tpch-80g-8
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-6-fixed_tpch-100g-6
+1         1730.36  ...    Job-16-fixed_tpch-80g-4
+2         1730.36  ...   Job-21-fixed_tpch-100g-7
+3         1730.36  ...  Job-23-fixed_tpch-100g-14
+4         1730.36  ...    Job-24-fixed_tpch-80g-8
+5         1359.28  ...    Job-1-fixed_tpch-100g-3
+6         1359.28  ...    Job-16-fixed_tpch-80g-4
+7         1359.28  ...   Job-21-fixed_tpch-100g-7
+8         1359.28  ...  Job-23-fixed_tpch-100g-14
+9         1359.28  ...    Job-24-fixed_tpch-80g-8
+10           0.00  ...    Job-1-fixed_tpch-100g-3
+11           0.00  ...    Job-6-fixed_tpch-100g-6
+12           0.00  ...   Job-21-fixed_tpch-100g-7
+13           0.00  ...  Job-23-fixed_tpch-100g-14
+14           0.00  ...    Job-24-fixed_tpch-80g-8
+15        1793.66  ...    Job-1-fixed_tpch-100g-3
+16        1793.66  ...    Job-6-fixed_tpch-100g-6
+17        1793.66  ...    Job-16-fixed_tpch-80g-4
+18        1793.66  ...  Job-23-fixed_tpch-100g-14
+19        1793.66  ...    Job-24-fixed_tpch-80g-8
+20        1116.69  ...    Job-1-fixed_tpch-100g-3
+21        1116.69  ...    Job-6-fixed_tpch-100g-6
+22        1116.69  ...    Job-16-fixed_tpch-80g-4
+23        1116.69  ...   Job-21-fixed_tpch-100g-7
+24        1116.69  ...    Job-24-fixed_tpch-80g-8
+25        1590.46  ...    Job-1-fixed_tpch-100g-3
+26        1590.46  ...    Job-6-fixed_tpch-100g-6
+27        1590.46  ...    Job-16-fixed_tpch-80g-4
+28        1590.46  ...   Job-21-fixed_tpch-100g-7
+29        1590.46  ...  Job-23-fixed_tpch-100g-14
+
+[30 rows x 14 columns]
+True: Job-23-fixed_tpch-100g-14
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-6-fixed_tpch-100g-6
+1         1730.36  ...   Job-21-fixed_tpch-100g-7
+2         1730.36  ...  Job-23-fixed_tpch-100g-14
+3         1730.36  ...    Job-24-fixed_tpch-80g-8
+4         1359.28  ...    Job-1-fixed_tpch-100g-3
+5         1359.28  ...   Job-21-fixed_tpch-100g-7
+6         1359.28  ...  Job-23-fixed_tpch-100g-14
+7         1359.28  ...    Job-24-fixed_tpch-80g-8
+8         1793.66  ...    Job-1-fixed_tpch-100g-3
+9         1793.66  ...    Job-6-fixed_tpch-100g-6
+10        1793.66  ...  Job-23-fixed_tpch-100g-14
+11        1793.66  ...    Job-24-fixed_tpch-80g-8
+12         723.67  ...    Job-1-fixed_tpch-100g-3
+13         723.67  ...    Job-6-fixed_tpch-100g-6
+14         723.67  ...   Job-21-fixed_tpch-100g-7
+15         723.67  ...    Job-24-fixed_tpch-80g-8
+16           0.54  ...    Job-1-fixed_tpch-100g-3
+17           0.54  ...    Job-6-fixed_tpch-100g-6
+18           0.54  ...   Job-21-fixed_tpch-100g-7
+19           0.54  ...  Job-23-fixed_tpch-100g-14
+
+[20 rows x 14 columns]
+True: Job-23-fixed_tpch-100g-14
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-6-fixed_tpch-100g-6
+1         1730.36  ...   Job-21-fixed_tpch-100g-7
+2         1730.36  ...  Job-23-fixed_tpch-100g-14
+3         1730.36  ...    Job-24-fixed_tpch-80g-8
+4         1359.28  ...    Job-1-fixed_tpch-100g-3
+5         1359.28  ...   Job-21-fixed_tpch-100g-7
+6         1359.28  ...  Job-23-fixed_tpch-100g-14
+7         1359.28  ...    Job-24-fixed_tpch-80g-8
+8         1793.66  ...    Job-1-fixed_tpch-100g-3
+9         1793.66  ...    Job-6-fixed_tpch-100g-6
+10        1793.66  ...  Job-23-fixed_tpch-100g-14
+11        1793.66  ...    Job-24-fixed_tpch-80g-8
+12         723.67  ...    Job-1-fixed_tpch-100g-3
+13         723.67  ...    Job-6-fixed_tpch-100g-6
+14         723.67  ...   Job-21-fixed_tpch-100g-7
+15         723.67  ...    Job-24-fixed_tpch-80g-8
+16           0.00  ...    Job-1-fixed_tpch-100g-3
+17           0.00  ...    Job-6-fixed_tpch-100g-6
+18           0.00  ...   Job-21-fixed_tpch-100g-7
+19           0.00  ...  Job-23-fixed_tpch-100g-14
+
+[20 rows x 14 columns]
+True: Job-21-fixed_tpch-100g-7
+    run_time_cp_1  ...                   job_id_2
+0         1730.36  ...    Job-6-fixed_tpch-100g-6
+1         1730.36  ...   Job-21-fixed_tpch-100g-7
+2         1730.36  ...  Job-23-fixed_tpch-100g-14
+3         1359.28  ...    Job-1-fixed_tpch-100g-3
+4         1359.28  ...   Job-21-fixed_tpch-100g-7
+5         1359.28  ...  Job-23-fixed_tpch-100g-14
+6         1793.66  ...    Job-1-fixed_tpch-100g-3
+7         1793.66  ...    Job-6-fixed_tpch-100g-6
+8         1793.66  ...  Job-23-fixed_tpch-100g-14
+9            0.19  ...    Job-1-fixed_tpch-100g-3
+10           0.19  ...    Job-6-fixed_tpch-100g-6
+11           0.19  ...   Job-21-fixed_tpch-100g-7
+
+[12 rows x 14 columns]
+True: Job-6-fixed_tpch-100g-6
+   run_time_cp_1  ...                  job_id_2
+0        1730.36  ...   Job-6-fixed_tpch-100g-6
+1        1730.36  ...  Job-21-fixed_tpch-100g-7
+2        1359.28  ...   Job-1-fixed_tpch-100g-3
+3        1359.28  ...  Job-21-fixed_tpch-100g-7
+4        1793.66  ...   Job-1-fixed_tpch-100g-3
+5        1793.66  ...   Job-6-fixed_tpch-100g-6
+
+[6 rows x 14 columns]
+True: Job-6-fixed_tpch-100g-6
+   run_time_cp_1  ...                  job_id_2
+0        1730.36  ...   Job-6-fixed_tpch-100g-6
+1        1730.36  ...  Job-21-fixed_tpch-100g-7
+2         937.68  ...   Job-1-fixed_tpch-100g-3
+3         937.68  ...  Job-21-fixed_tpch-100g-7
+4           0.00  ...   Job-1-fixed_tpch-100g-3
+5           0.00  ...   Job-6-fixed_tpch-100g-6
+
+[6 rows x 14 columns]
+True: Job-1-fixed_tpch-100g-3
+   run_time_cp_1  ...                 job_id_2
+0        1730.36  ...  Job-6-fixed_tpch-100g-6
+1           0.52  ...  Job-1-fixed_tpch-100g-3
+
+[2 rows x 14 columns]
