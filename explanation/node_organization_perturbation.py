@@ -99,8 +99,7 @@ def schedule_with_perturbation(pert_opt: Dict = None):
         node_idx = pert_opt['node_idx']
         splits = pert_opt['splits']
         # changed_job = perturbation_with_node_split(target_job, node_idx, splits)
-        pert_func = lambda job_list: perturbation_with_node_split(job_list[target_job_idx], node_idx,
-                                                                  splits)
+        pert_func = lambda job_list: perturbation_with_node_split(job_list[target_job_idx], node_idx, splits)
     else:
         pert_func = None
 

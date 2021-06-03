@@ -11,7 +11,7 @@ from sklearn import tree
 MAX_SAMPLES_PER_STEP = 5  # max data samples per schedule step
 
 
-def data_loader_for_training(paths, max_samples_per_step, enable_all_false_samples=False, random_seed=90):  # seed: 30
+def data_loader_for_training(paths, max_samples_per_step, enable_double_negative_samples=False, random_seed=90):  # seed: 30
     np_random = np.random
     np_random.seed(random_seed)
     data = []
@@ -38,7 +38,7 @@ def data_loader_for_training(paths, max_samples_per_step, enable_all_false_sampl
                                 data.append(sample_01)
                             counts += 1
 
-                        if enable_all_false_samples is True:  # for all-false sample, e.g. '00' if num_bits = 2
+                        if enable_double_negative_samples is True:  # for all-false sample, e.g. '00' if num_bits = 2
                             random_samples_idx = list(random_samples_idx)
                             num_samples = 0
                             for i in range(len(random_samples_idx)):
@@ -163,25 +163,25 @@ def write_prediction_to_file(X, y, y_pred, path):
             file.write(str(x) + ' label:' + label + ' pred: ' + label_p + '\n')
 
 
-def train(max_sample_per_step=MAX_SAMPLES_PER_STEP, enable_all_false_samples=False, num_bits_in_class_label=2):
+def train(max_sample_per_step=MAX_SAMPLES_PER_STEP, enable_double_negative_samples=False, num_bits_in_class_label=2):
     job_dataframe = data_loader_for_training(['./dataset/schedule_learn_30-jobs-1.txt',
                                                             './dataset/schedule_learn_30-jobs-2.txt',
                                                             './dataset/schedule_learn_30-jobs-3.txt',
                                                             './dataset/schedule_learn_30-jobs-4.txt'],
                                              max_samples_per_step=max_sample_per_step,
-                                             enable_all_false_samples=enable_all_false_samples)
+                                             enable_double_negative_samples=enable_double_negative_samples)
     X = job_dataframe.loc[:, : 'num_tasks_smallest_ready_node_' + str(num_bits_in_class_label - 1)]
     y = job_dataframe.loc[:, 'be_scheduled']
     predictor = rf_predictor(X, y)
     return predictor
 
 
-def test_v1(predictor, num_bits_in_class_label=2, enable_all_false_samples=False):
+def test_v1(predictor, num_bits_in_class_label=2, enable_double_negative_samples=False):
     """load data by only merging the true sample with the false samples. It is used to purely test the model performance,
     e.g. precision, recall, roc"""
     test_dataframe = data_loader_for_training(['./dataset/schedule_learn_30-jobs-5.txt'],
                                               max_samples_per_step=MAX_SAMPLES_PER_STEP,
-                                              enable_all_false_samples=enable_all_false_samples)  # test path to set
+                                              enable_double_negative_samples=enable_double_negative_samples)  # test path to set
     X_test = test_dataframe.loc[:, : 'num_tasks_smallest_ready_node_1']
     y_test = test_dataframe.loc[:, 'be_scheduled']
 
@@ -292,10 +292,11 @@ def get_predict_explanation(job_0, job_1, decision_tree_id):
         print('decision node', node_id, 'feature', feature_id, '=', X[feature_id], inequal_sign,
               threshold_val)
 
+
 if __name__ == '__main__':
-    predictor = train(max_sample_per_step=5, enable_all_false_samples=False, num_bits_in_class_label=2)
+    predictor = train(max_sample_per_step=5, enable_double_negative_samples=False, num_bits_in_class_label=2)
     # test_v1
-    # test_v1(predictor, enable_all_false_samples=False, num_bits_in_class_label=2)
+    # test_v1(predictor, enable_double_negative_samples=False, num_bits_in_class_label=2)
 
     # test_v2
     # true_labels, pred_labels = test_v2(predictor, top_n=3, num_bits_in_class_label=2)
